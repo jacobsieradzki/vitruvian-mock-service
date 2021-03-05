@@ -6,8 +6,11 @@ export default function getRequestTextResponse(req, res, result) {
     case 'GET':
       const output = result();
       res.status(200).send(output);
+      break;
+
     default:
       res.setHeader('Allow', ['GET']);
       res.status(405).end(`Method ${method} Not Allowed`);
+      break;
   }
 }
