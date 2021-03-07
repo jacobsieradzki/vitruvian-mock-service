@@ -4,17 +4,17 @@ import Link from 'next/link'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Index() {
-  const { data, error } = useSwr('/api/users', fetcher)
+  const { data, error } = useSwr('/api/mock/available', fetcher)
 
-  if (error) return <div>Failed to load users</div>
+  if (error) return <div>Failed to load channels</div>
   if (!data) return <div>Loading...</div>
 
   return (
     <ul>
-      {data.map((user) => (
-        <li key={user.id}>
-          <Link href="/user/[id]" as={`/user/${user.id}`}>
-            <a>{`User ${user.id}`}</a>
+      {data.map(channel => (
+        <li key={channel.name}>
+          <Link href={`/api/mock/${channel.id}`}>
+            <a>{channel.name}</a>
           </Link>
         </li>
       ))}

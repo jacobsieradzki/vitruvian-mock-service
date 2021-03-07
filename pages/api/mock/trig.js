@@ -1,4 +1,4 @@
-import getRequestTextResponse from "../../helper/request";
+import { getRequestTextResponse } from "../../../helper/request";
 
 export default function getRequestHandler(req, res) {
 
