@@ -1,23 +1,35 @@
-import useSwr from 'swr'
 import Link from 'next/link'
+import { PI_TO_ANDROID, SENSORS_TO_PI } from '../data/channels'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+function Item(item) {
+  
+  if (item.text) {
+    return (
+      <p>{item.text}</p>
+    );
+  }
+
+  if (item.id && item.name) {
+    return (
+      <li key={item.name}>
+        <Link href={`/api/${item.id}`}>
+          <a>{item.name}</a>
+        </Link>
+      </li>
+    );
+  }
+
+  return <></>;
+}
 
 export default function Index() {
-  const { data, error } = useSwr('/api/mock/available', fetcher)
-
-  if (error) return <div>Failed to load channels</div>
-  if (!data) return <div>Loading...</div>
-
   return (
     <ul>
-      {data.map(channel => (
-        <li key={channel.name}>
-          <Link href={`/api/mock/${channel.id}`}>
-            <a>{channel.name}</a>
-          </Link>
-        </li>
-      ))}
+      <h1>Sensors to Pi</h1>
+      {SENSORS_TO_PI.map(Item)}
+
+      <h1>Pi to Android</h1>
+      {PI_TO_ANDROID.map(Item)}
     </ul>
   )
 }

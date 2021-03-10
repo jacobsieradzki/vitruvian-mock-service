@@ -1,24 +1,20 @@
 
-export const AVAILABLE_CHANNELS = [
+export const SENSORS_TO_PI = [
   {
-    id: 'app/trig',
-    name: 'Pi to Android example response',
+    text: 'x = 0, y = 2.5*sin(time + 2.5), z = 1'
+  },
+  {
+    id: 'pi/mpu?id=test1_mpu1',
+    name: 'mpu_1',
     filters: ['mock']
   },
   {
-    id: 'app/trig?help',
-    name: 'Pi to Android HELP',
+    id: 'pi/mpu?id=test1_mpu2',
+    name: 'mpu_2',
     filters: ['mock']
   },
   {
-    id: 'mpu?id=test1_mpu1',
-    name: 'test1: mpu1',
-    filters: ['mock']
-  },
-  {
-    id: 'mpu?id=test1_mpu2',
-    name: 'test1: mpu2',
-    filters: ['mock']
+    text: 'Files from MS Teams'
   },
   {
     id: 'file/21-06-50mpuOutput.txt',
@@ -30,4 +26,17 @@ export const AVAILABLE_CHANNELS = [
     name: "21-49-27mpuOutput.txt",
     filters: ['real']
   }
+];
+
+export const PI_TO_ANDROID = [
+  {
+    id: 'app/help',
+    name: 'Pi to Android HELP',
+    filters: ['mock']
+  },
+  {
+    id: 'app/trig',
+    name: 'posture = floor(25 * sin((0.1 / interval) * timestamp + 80.1) + 55)',
+    filters: ['mock']
+  },
 ];

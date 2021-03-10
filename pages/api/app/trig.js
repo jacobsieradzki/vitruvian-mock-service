@@ -1,5 +1,5 @@
-import { APP_HELP_MENU } from "../../../../data/appHelp";
-import { getRequestTextResponse, getRequestJsonResponse } from "../../../../helper/request";
+import { APP_HELP_MENU } from "../../../data/appHelp";
+import { getRequestTextResponse, getRequestJsonResponse } from "../../../helper/request";
 
 const randomNumberBetween = (min, max) => Math.floor(Math.random() * max) + min;
 const insertAt = (item, index, arr) => arr.splice(index, 0, item);

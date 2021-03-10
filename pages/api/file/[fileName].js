@@ -1,4 +1,4 @@
-import readMpuOutputFile from "../../../../helper/mpuOutput.js";
+import readMpuOutputFile from "../../../helper/mpuOutput.js";
 
 export default function getRequest(req, res) {
   const {
