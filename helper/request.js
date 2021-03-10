@@ -26,6 +26,7 @@ export function getRequestJsonResponse(req, res, result) {
       var output = null;
       if (typeof(result) === "function") output = result();
       if (typeof(result) === "object") output = result;
+      console.log(output);
       res.status(200).json(output);
       break;
 

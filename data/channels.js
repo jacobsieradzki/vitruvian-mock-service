@@ -1,23 +1,13 @@
 
 export const AVAILABLE_CHANNELS = [
   {
-    id: 'trig',
-    name: 'trig',
+    id: 'app/trig',
+    name: 'Pi to Android example response',
     filters: ['mock']
   },
   {
-    id: 'trig?x=sin',
-    name: 'trig with sin x',
-    filters: ['mock']
-  },
-  {
-    id: 'trig?y=sin',
-    name: 'trig with sin y',
-    filters: ['mock']
-  },
-  {
-    id: 'trig?z=sin',
-    name: 'trig with sin z',
+    id: 'app/trig?help',
+    name: 'Pi to Android HELP',
     filters: ['mock']
   },
   {

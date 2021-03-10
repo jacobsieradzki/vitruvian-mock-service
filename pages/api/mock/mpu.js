@@ -6,8 +6,8 @@ export default function getRequestHandler(req, res) {
   const date = new Date();
   var seed = date.getTime();
 
-  var time = parseFloat(query?.time)
-  if (!!time) seed = time;
+  var time = parseFloat(query?.time);
+  if (time >= 0) seed = time;
 
   var x = 0;
   var y = 0;
