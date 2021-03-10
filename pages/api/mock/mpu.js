@@ -7,7 +7,7 @@ export default function getRequestHandler(req, res) {
   var seed = date.getTime();
 
   var time = parseFloat(query?.time)
-  if (time) seed = time;
+  if (!!time) seed = time;
 
   var x = 0;
   var y = 0;
