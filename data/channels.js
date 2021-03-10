@@ -21,6 +21,16 @@ export const AVAILABLE_CHANNELS = [
     filters: ['mock']
   },
   {
+    id: 'mpu?id=test1_mpu1',
+    name: 'test1: mpu1',
+    filters: ['mock']
+  },
+  {
+    id: 'mpu?id=test1_mpu2',
+    name: 'test1: mpu2',
+    filters: ['mock']
+  },
+  {
     id: 'file/21-06-50mpuOutput.txt',
     name: "21-06-50mpuOutput.txt",
     filters: ['real']
