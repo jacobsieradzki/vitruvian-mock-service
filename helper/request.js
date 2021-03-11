@@ -1,4 +1,6 @@
 
+export const queryInt = (query, key, fallback) => (!!query[key]) ? parseInt(query[key]) : fallback;
+
 export function getRequestTextResponse(req, res, result) {
   const { method } = req;
 
