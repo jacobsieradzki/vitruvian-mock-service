@@ -39,6 +39,8 @@ export default function Index() {
       <ItemLink href="file/21-49-27mpuOutput.txt" name="21-49-27mpuOutput.txt" />
 
       <h2>Pi to Android</h2>
+
+      <ItemLink href="app/help" name="Help" />
       
       <AppItem 
         label="posture = floor(25 * sin((0.1 / interval) * timestamp + 80.1) + 55)"
