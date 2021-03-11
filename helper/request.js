@@ -1,6 +1,14 @@
 
 export const queryInt = (query, key, fallback) => (!!query[key]) ? parseInt(query[key]) : fallback;
 
+export function internalError(req, res, message = "Internal server API error") {
+  res.status(500).end(message);
+}
+
+export function notFoundResponse(req, res, message) {
+  res.status(404).end(message);
+}
+
 export function getRequestTextResponse(req, res, result) {
   const { method } = req;
 

@@ -13,15 +13,21 @@ and example:
 ---
 
 enum ACTIVITY_TYPE:
-  0 [timestamp] [value] # POSTURE value=[0-100]
-  1 [timestamp] # SLOUCH_ALERT timestamp=[UNIX Timestamp with milliseconds]
-  2 [timestamp] # SEDENTARY_ALERT
-  3 [timestamp] # DOWNSTAIRS
-  4 [timestamp] # JOGGING
-  5 [timestamp] # SITTING
-  6 [timestamp] # STANDING
-  7 [timestamp] # UPSTAIRS
-  8 [timestamp] # WALKING
+  0  [timestamp] [value] # POSTURE             value=[0-100]
+  1  [timestamp]         # SLOUCH_ALERT        timestamp=[UNIX Timestamp with milliseconds]
+  2  [timestamp]         # SIT_ALERT
+  3  [timestamp]         # WALKING
+  4  [timestamp]         # WALKING_UPSTAIRS
+  5  [timestamp]         # WALKING_DOWNSTAIRS
+  6  [timestamp]         # SITTING
+  7  [timestamp]         # STANDING
+  8  [timestamp]         # LAYING
+  9  [timestamp]         # STAND_TO_SIT
+  10 [timestamp]         # SIT_TO_STAND
+  11 [timestamp]         # SIT_TO_LIE
+  12 [timestamp]         # LIE_TO_SIT
+  13 [timestamp]         # STAND_TO_LIE
+  14 [timestamp]         # LIE_TO_STAND
 
 
 ---
