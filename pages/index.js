@@ -44,6 +44,9 @@ export default function Index() {
       <AppItem 
         label="posture = floor(25 * sin((0.1 / interval) * timestamp + 80.1) + 55)"
         href="app/test1" />
+      <AppItem 
+        label='test "abc" from Firebase'
+        href="app/abc" />
     </ul>
   )
 };
