@@ -35,8 +35,26 @@ export const PI_TO_ANDROID = [
     filters: ['mock']
   },
   {
-    id: 'app/trig',
-    name: 'posture = floor(25 * sin((0.1 / interval) * timestamp + 80.1) + 55)',
+    text: 'posture = floor(25 * sin((0.1 / interval) * timestamp + 80.1) + 55)',
+  },
+  {
+    id: 'app/trig?format=DEFAULT',
+    name: 'MINIFIED (default)',
+    filters: ['mock']
+  },
+  {
+    id: 'app/trig?format=UNMINIFIED',
+    name: 'UNMINIFIED',
+    filters: ['mock']
+  },
+  {
+    id: 'app/trig?format=CSV',
+    name: 'CSV',
+    filters: ['mock']
+  },
+  {
+    id: 'app/trig?format=JSON',
+    name: 'JSON',
     filters: ['mock']
   },
 ];

@@ -1,35 +1,48 @@
-import Link from 'next/link'
-import { PI_TO_ANDROID, SENSORS_TO_PI } from '../data/channels'
+import Link from 'next/link';
 
-function Item(item) {
-  
-  if (item.text) {
-    return (
-      <p>{item.text}</p>
-    );
-  }
-
-  if (item.id && item.name) {
-    return (
-      <li key={item.name}>
-        <Link href={`/api/${item.id}`}>
-          <a>{item.name}</a>
-        </Link>
-      </li>
-    );
-  }
-
-  return <></>;
+function ItemLink({ href, name }) {
+  return (
+    <li key={name}>
+      <Link href={`/api/${href}`}>
+        <a>{name}</a>
+      </Link>
+    </li>
+  );
 }
+
+function AppItem({ label, href }) {
+  return (
+    <>
+      <p>{label}</p>
+      <ItemLink href={`${href}&format=DEFAULT`} name={`minified (default)`} />
+      <ItemLink href={`${href}&format=UNMINIFIED`} name={`unminified`} />
+      <ItemLink href={`${href}&format=JSON`} name={`json`} />
+      <ItemLink href={`${href}&format=CSV`} name={`csv`} />
+    </>
+  )
+};
 
 export default function Index() {
   return (
     <ul>
-      <h1>Sensors to Pi</h1>
-      {SENSORS_TO_PI.map(Item)}
+      <h2>Sensors to Pi</h2>
+      
+      <h3>Test 1</h3>
+      <p>x = 0, y = 2.5*sin(time + 2.5), z = 1</p>
+      <ItemLink href="pi/mpu?id=test1_mpu1" name="mpu_1" />
+      <ItemLink href="pi/mpu?id=test1_mpu2" name="mpu_2" />
 
-      <h1>Pi to Android</h1>
-      {PI_TO_ANDROID.map(Item)}
+
+
+      <h2>Files from MS Teams</h2>
+      <ItemLink href="file/21-06-50mpuOutput.txt" name="21-06-50mpuOutput.txt" />
+      <ItemLink href="file/21-49-27mpuOutput.txt" name="21-49-27mpuOutput.txt" />
+
+      <h2>Pi to Android</h2>
+      
+      <AppItem 
+        label="posture = floor(25 * sin((0.1 / interval) * timestamp + 80.1) + 55)"
+        href="app/test1?" />
     </ul>
   )
-}
+};
