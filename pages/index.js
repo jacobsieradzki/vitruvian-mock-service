@@ -26,6 +26,8 @@ export default function Index() {
   return (
     <ul>
       <h2>Sensors to Pi</h2>
+
+      <ItemLink href="pi/help" name="Help" />
       
       <h3>Test 1</h3>
       <p>x = 0, y = 2.5*sin(time + 2.5), z = 1</p>

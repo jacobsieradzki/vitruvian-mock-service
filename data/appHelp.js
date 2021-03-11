@@ -29,9 +29,6 @@ Endpoint query parameters:
 e.g. ?interval=500&readings=100&alerts=10&activities=40
 ---
 
-### Show this help menu, don't need to put a value e.g. .../trig?help
-help          optional (bool) default=false
-
 ### Format of output=['DEFAULT' | 'UNMINIFIED' | 'JSON' | 'CSV'] (default: minified format shown above)
 format        optional (enum) default='DEFAULT'
 
