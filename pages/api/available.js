@@ -1,5 +1,5 @@
 import { getRequestJsonResponse } from "../../helper/request";
-import { SENSORS_TO_PI, PI_TO_ANDROID } from '../../../data/channels';
+import { SENSORS_TO_PI, PI_TO_ANDROID } from '../../data/channels';
 
 export default function getRequestHandler(req, res) {
   const { 
