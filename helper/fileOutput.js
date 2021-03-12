@@ -5,7 +5,9 @@ export default function readMpuOutputFile(req, res, fileName) {
 
   const { query } = req;
 
-  const text = readFileSync(fileName, 'utf8');
+  const text = readFile(req, res, fileName);
+  if (!text) return;
+
   const textArr = text.split('\n');
 
   var results = [];
@@ -47,12 +49,14 @@ export function readSensorOutputFile(req, res, fileName) {
   const interval = queryInt(query, 'interval', null);
   const queryTimestamp = queryInt(query, 'timestamp', null);
 
-  if (interval == null || queryTimestamp == null) {
+  if (query.format == 'DEFAULT' && (interval == null || queryTimestamp == null)) {
     badRequestResponse(req, res, 'Please specify timestamp and optionally interval in ms: \n\ne.g. To fetch the 4th reading which is at 2.0s\n.../api/pi/{fileName}?timestamp=2000&interval=500');
     return;
   }
 
-  const text = readFileSync(fileName, 'utf8');
+  const text = readFile(req, res, fileName);
+  if (!text) return;
+
   const textArr = text.split('\n');
 
   var currentTimestamp = 0;
@@ -89,5 +93,16 @@ export function readSensorOutputFile(req, res, fileName) {
     } else {
       notFoundResponse(req, res, `Reading not found at timestamp=${queryTimestamp}, interval=${interval}`);
     }
+  }
+}
+
+const readFile = (req, res, path) => {
+  try {
+    const text = readFileSync(fileName, 'utf8');
+    return text;
+  } catch (error) {
+    var str = JSON.stringify(error);
+    if (str === '{}') str = "Not found"
+    notFoundResponse(req, res, `Error getting resource ${path}\n${str}`);
   }
 }
