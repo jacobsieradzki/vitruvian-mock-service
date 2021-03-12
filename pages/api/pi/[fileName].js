@@ -5,5 +5,9 @@ export default function getRequest(req, res) {
     query: { fileName },
   } = req;
 
-  return readSensorOutputFile(req, res, `./data/ios/${fileName}`);
+  console.log('req');
+  console.log(req.referer);
+  console.log(req, res)
+
+  return readSensorOutputFile(req, res, `assets/ios/${fileName}`);
 }
