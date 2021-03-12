@@ -11,7 +11,7 @@ export default function mpuOutput(req, res, sensor) {
   const queryInt = (key, fallback) => (!!query[key]) ? parseInt(query[key]) : fallback;
 
   const defaultTime = Math.round(new Date().getTime() / 1000) * 1000;
-  const timestamp = queryInt('time', defaultTime);
+  const timestamp = queryInt('timestamp', defaultTime);
   const format = query.format || '';
 
   const { x, y, z, } = sensor(timestamp);

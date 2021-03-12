@@ -35,6 +35,9 @@ export default function Index() {
       <p>x = 0, y = 3*sin(time + 1.5), z = 1</p>
       <ItemLink href="pi/test1_mpu2" name="mpu_2" />
 
+      <h2>Files from iOS Sensor App</h2>
+      <ItemLink href="pi/gyroscope-1615560322849.csv" name="gyroscope-1615560322849.csv" />
+
       <h2>Files from MS Teams</h2>
       <ItemLink href="file/21-06-50mpuOutput.txt" name="21-06-50mpuOutput.txt" />
       <ItemLink href="file/21-49-27mpuOutput.txt" name="21-49-27mpuOutput.txt" />

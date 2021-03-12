@@ -1,4 +1,4 @@
-import { getRequestTextResponse, getRequestJsonResponse } from "./request";
+import { getRequestTextResponse, getRequestJsonResponse, queryInt, notFoundResponse, badRequestResponse } from "./request";
 import { readFileSync } from 'fs';
 
 export default function readMpuOutputFile(req, res, fileName) {
@@ -28,9 +28,9 @@ export default function readMpuOutputFile(req, res, fileName) {
     }
   });
 
-  if (query.format === 'json') {
+  if (query.format === 'JSON') {
     getRequestJsonResponse(req, res, results);
-  } else if (query.format === 'txt') {
+  } else if (query.format === 'TXT') {
     getRequestTextResponse(req, res, text);
   } else {
     const timestamp = new Date().getTime();
@@ -38,5 +38,56 @@ export default function readMpuOutputFile(req, res, fileName) {
     const output = `${timestamp},${result.accelerometer.x},${result.accelerometer.y},${result.gryo.z},${result.gryo.x},${result.gryo.y},${result.gryo.z}`;
     console.log('testing...', timestamp, result, output);
     getRequestTextResponse(req, res, output);
+  }
+}
+
+export function readSensorOutputFile(req, res, fileName) {
+
+  const { query } = req;
+  const interval = queryInt(query, 'interval', null);
+  const queryTimestamp = queryInt(query, 'timestamp', null);
+
+  if (interval == null || queryTimestamp == null) {
+    badRequestResponse(req, res, 'Please specify timestamp and optionally interval in ms: \n\ne.g. To fetch the 4th reading which is at 2.0s\n.../api/pi/{fileName}?timestamp=2000&interval=500');
+    return;
+  }
+
+  const text = readFileSync(fileName, 'utf8');
+  const textArr = text.split('\n');
+
+  var currentTimestamp = 0;
+  var results = [];
+
+  textArr.forEach((str, index) => {
+    if (str === "") return;
+    if (index === 0) return;
+
+    const components = str.split(',');
+    if (components.length !== 4) return;
+
+    const x = parseFloat(components[1]);
+    const y = parseFloat(components[2]);
+    const z = parseFloat(components[3]);
+
+    results.push({ timestamp: currentTimestamp, x, y, z });
+    currentTimestamp += interval
+  });
+
+  console.log(`Parsed ${results.length} results.`);
+
+  if (query.format === 'JSON') {
+    getRequestJsonResponse(req, res, results);
+  } else if (query.format === 'TXT') {
+    const output = results.map(x => `${x.timestamp},${x.x},${x.y},${x.z}`).join('\n');
+    getRequestTextResponse(req, res, "timestamp,x,y,z\n" + output);
+  } else {
+    var result = results.find(value => value.timestamp === queryTimestamp);
+    if (result) {
+      console.log(`Selected result matching timestamp ${queryTimestamp}`);
+      const output = `${result.timestamp},${result.x},${result.y},${result.z}`;
+      getRequestTextResponse(req, res, output);
+    } else {
+      notFoundResponse(req, res, `Reading not found at timestamp=${queryTimestamp}, interval=${interval}`);
+    }
   }
 }
