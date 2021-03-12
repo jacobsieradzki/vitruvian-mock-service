@@ -1,7 +1,8 @@
 import { getRequestTextResponse, getRequestJsonResponse, queryInt, notFoundResponse, badRequestResponse } from "./request";
-import { readFileSync } from 'fs';
 
-export function readSensorOutputFile(req, res, fileName) {
+const FILE_BASE_URL = "https://raw.githubusercontent.com/jacobsieradzki/vitruvian-hardware/main/"
+
+export async function readSensorOutputFile(req, res, fileName) {
 
   const { query } = req;
   const interval = queryInt(query, 'interval', null);
@@ -13,14 +14,12 @@ export function readSensorOutputFile(req, res, fileName) {
     return;
   }
 
-  const text = readFile(req, res, fileName);
+  const text = await readFile(req, res, fileName);
   if (!text) return;
   const textArr = text.split('\n');
 
-
   var currentTimestamp = 0;
   var results = [];
-
 
   textArr.forEach((str, index) => {
     if (str === "") return;
@@ -42,16 +41,6 @@ export function readSensorOutputFile(req, res, fileName) {
   outputResults(req, res, results);
 }
 
-const readFile = (req, res, path) => {
-  try {
-    const text = readFileSync(path, 'utf8');
-    return text;
-  } catch (error) {
-    var str = JSON.stringify(error);
-    if (str === '{}') str = "Not found"
-    notFoundResponse(req, res, `Error getting resource ${path}\n${str}`);
-  }
-}
 
 const outputResults = (req, res, results) => {
   const { query } = req;
@@ -73,3 +62,20 @@ const outputResults = (req, res, results) => {
     }
   }
 };
+
+const readFile = async (req, res, path) => {
+  try {
+    const response = await fetch(FILE_BASE_URL + path);
+    const text = await response.text();
+    if (text?.length > 0) {
+      return text
+    } else {
+      return null;
+    }
+  } catch (error) {
+    var str = JSON.stringify(error);
+    if (str === '{}') str = "Not found"
+    notFoundResponse(req, res, `Error getting resource ${path}\n${str}`);
+    return null;
+  }
+}
