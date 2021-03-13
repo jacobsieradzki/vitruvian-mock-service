@@ -1,4 +1,4 @@
-import { getRequestTextResponse, internalError, notFoundResponse } from "@h/request";
+import { internalError, notFoundResponse } from "@h/request";
 import { remoteOutput } from '@h/appOutput';
 import firebase from '@h/firebase';
 

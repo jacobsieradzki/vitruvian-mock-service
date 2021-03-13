@@ -1,13 +1,8 @@
 
 export const queryInt = (query, key, fallback) => (!!query[key]) ? parseInt(query[key]) : fallback;
 
-export function internalError(req, res, message = "Internal server API error") {
-  res.status(500).end(message);
-}
-
-export function badRequestResponse(req, res, message) {
-  res.status(400).end(message);
-}
+export const internalError = (req, res, message = "Internal server API error") => res.status(500).end(message);
+export const badRequestResponse = (req, res, message) => res.status(400).end(message);
 
 export function notFoundResponse(req, res, message) {
   res.status(404).end(message);
@@ -18,6 +13,25 @@ export function getRequestTextResponse(req, res, result) {
 
   switch (method) {
     case 'GET':
+      var output = null;
+      if (typeof(result) === "function") output = result();
+      if (typeof(result) === "object") output = result;
+      if (typeof(result) === "string") output = result;
+      res.status(200).send(output);
+      break;
+
+    default:
+      res.setHeader('Allow', ['GET']);
+      res.status(405).end(`Method ${method} Not Allowed`);
+      break;
+  }
+}
+
+export function postRequestTextResponse(req, res, result) {
+  const { method } = req;
+
+  switch (method) {
+    case 'PUT':
       var output = null;
       if (typeof(result) === "function") output = result();
       if (typeof(result) === "object") output = result;
