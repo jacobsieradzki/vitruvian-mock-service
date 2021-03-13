@@ -1,10 +1,32 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { FILE_REPO_URL, FILE_API_URL } from '@h/fileOutput';
 
 function ItemLink({ href, name }) {
   return (
     <li key={name}>
       <Link href={`/api/${href}`}>
         <a>{name}</a>
+      </Link>
+    </li>
+  );
+}
+
+function SensorLink({ item }) {
+  console.log(item);
+  const fileName = item.name;
+  return (
+    <li>
+      <Link href={`/api/pi/${fileName}`}>
+        <a>{item.name}</a>
+      </Link>
+      &nbsp;|&nbsp;
+      <Link href={`/api/pi/${fileName}?format=JSON`}>
+        <a>JSON</a>
+      </Link>
+      &nbsp;|&nbsp;
+      <Link href={item.html_url}>
+        <a>GitHub</a>
       </Link>
     </li>
   );
@@ -23,6 +45,13 @@ function AppItem({ label, href }) {
 };
 
 export default function Index() {
+
+  const [iosTests, setIosTests] = useState([]);
+  useEffect(() => {
+    fetch(FILE_API_URL).then(x => x.json()).then(setIosTests)
+      .catch(console.log);
+  }, []);
+
   return (
     <ul>
       <h2>Sensors to Pi</h2>
@@ -36,7 +65,14 @@ export default function Index() {
       <ItemLink href="pi/test1_mpu2" name="mpu_2" />
 
       <h2>Files from iOS Sensor App</h2>
-      <ItemLink href="pi/gyroscope-1615560322849.csv" name="gyroscope-1615560322849.csv" />
+      {iosTests.length > 0 ? (
+        <>
+          <p>Fetched from <a href={FILE_REPO_URL}>jacobsieradzki/vitruvian-hardware/ios_tests</a> on GitHub</p>
+          {iosTests.map((x, i) => <SensorLink key={i} item={x} />)}
+        </>
+      ) : (
+        <p>No tests available. Check the ios_tests folder of the vitruvian-hardware repo <a href={FILE_REPO_URL}>here</a>.</p>
+      )}
 
       <h2>Files from MS Teams</h2>
       <ItemLink href="file/21-06-50mpuOutput.txt" name="21-06-50mpuOutput.txt" />

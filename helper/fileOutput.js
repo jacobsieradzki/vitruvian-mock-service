@@ -1,6 +1,8 @@
 import { getRequestTextResponse, getRequestJsonResponse, queryInt, notFoundResponse, badRequestResponse } from "./request";
 
-const FILE_BASE_URL = "https://raw.githubusercontent.com/jacobsieradzki/vitruvian-hardware/main/"
+export const FILE_REPO_URL = "https://github.com/jacobsieradzki/vitruvian-hardware/tree/main/ios_tests/"
+export const FILE_BASE_URL = "https://raw.githubusercontent.com/jacobsieradzki/vitruvian-hardware/main/"
+export const FILE_API_URL = "https://api.github.com/repos/jacobsieradzki/vitruvian-hardware/contents/ios_tests/"
 
 export async function readSensorOutputFile(req, res, fileName) {
 
@@ -36,7 +38,6 @@ export async function readSensorOutputFile(req, res, fileName) {
     currentTimestamp += interval
   });
 
-
   console.log(`Parsed ${results.length} results.`);
   outputResults(req, res, results);
 }
@@ -67,15 +68,17 @@ const readFile = async (req, res, path) => {
   try {
     const response = await fetch(FILE_BASE_URL + path);
     const text = await response.text();
-    if (text?.length > 0) {
-      return text
+    console.log('Fetched from remote server', text, response.status);
+    if (response.status == 200 && text?.length > 0) {
+      return text;
     } else {
+      notFoundResponse(req, res, `Error getting resource:\n${FILE_BASE_URL + path}\n${text}`);
       return null;
     }
   } catch (error) {
     var str = JSON.stringify(error);
     if (str === '{}') str = "Not found"
-    notFoundResponse(req, res, `Error getting resource ${path}\n${str}`);
+    notFoundResponse(req, res, `Exception getting resource:\n${FILE_BASE_URL + path}\n${str}`);
     return null;
   }
 }
