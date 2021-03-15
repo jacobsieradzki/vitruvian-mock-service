@@ -17,7 +17,7 @@ export function getRequestTextResponse(req, res, result) {
       if (typeof(result) === "function") output = result();
       if (typeof(result) === "object") output = result;
       if (typeof(result) === "string") output = result;
-      res.status(200).send(output);
+      res.status(200).end(output);
       break;
 
     default:

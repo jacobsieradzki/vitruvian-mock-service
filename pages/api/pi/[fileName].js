@@ -14,10 +14,15 @@ export default async function request(req, res) {
 
     case 'POST':
       try {
-        const response = await firebase.database().ref(`tests/${fileName}`).set(req.body);
-        res.status(200).send(req.body);
+        await firebase.database().ref(`tests/${fileName}`).set(req.body, function(error) {
+          if (error) {
+            res.status(500).send('Error setting\n' + error);
+          } else {
+            res.status(200).send(req.body);
+          }
+        });
       } catch (error) {
-        res.status(500).send('Error saving\n' + JSON.stringify(err));
+        res.status(500).send('Error saving\n' + error);
       }
       break;
 

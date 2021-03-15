@@ -69,8 +69,10 @@ export default function appOutput(req, res, posture) {
 export function remoteOutput(req, res, events) {
   const { query } = req;
 
-  if (query.hasOwnProperty('help'))
-    return getRequestTextResponse(req, res, APP_HELP_MENU);
+  if (query.hasOwnProperty('help')) {
+    getRequestTextResponse(req, res, APP_HELP_MENU);
+    return;
+  }
 
   returnOutput(req, res, events);
 }
