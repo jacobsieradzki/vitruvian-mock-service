@@ -33,7 +33,6 @@ function getReadingAndDelete(req, res, id) {
 
     const items = Object.keys(itemsObj).map(k => itemsObj[k]);
 
-    console.log('items', items);
     const item = getItemWithMinimumDate(items);
     if (!item) {
       return sendEmpty();
@@ -46,7 +45,6 @@ function getReadingAndDelete(req, res, id) {
 }
 
 function deleteItems(ref, items, item) {
-  console.log('deleteItems', items, item);
   const newItems = items.filter(x => x != item);
   try {
     ref.set(newItems);
