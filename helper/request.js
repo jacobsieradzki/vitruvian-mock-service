@@ -31,7 +31,7 @@ export function postRequestTextResponse(req, res, result) {
   const { method } = req;
 
   switch (method) {
-    case 'PUT':
+    case 'POST':
       var output = null;
       if (typeof(result) === "function") output = result();
       if (typeof(result) === "object") output = result;
