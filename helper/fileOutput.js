@@ -38,7 +38,7 @@ export async function readSensorOutputFile(req, res, fileName) {
     currentTimestamp += interval
   });
 
-  console.log(`Parsed ${results.length} results.`);
+  console.log(`Parsed ${results.length} results out of ${textArr.length} lines.`, text);
   outputResults(req, res, results);
 }
 
@@ -46,6 +46,7 @@ export async function readSensorOutputFile(req, res, fileName) {
 const outputResults = (req, res, results) => {
   const { query } = req;
   const queryTimestamp = queryInt(query, 'timestamp', null);
+  const interval = queryInt(query, 'interval', null);
 
   if (query.format === 'JSON') {
     getRequestJsonResponse(req, res, results);
