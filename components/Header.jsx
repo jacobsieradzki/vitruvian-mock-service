@@ -16,7 +16,8 @@ export const Spacer = styled.div`
   flex-grow: 2;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.a`
+  display: block;
   height: 100%;
   width: calc(50% - 40px);
   background: url("images/${props => props.image}") left center no-repeat;
@@ -45,7 +46,7 @@ export const Link = styled.a`
 export default function Header() {
   return (
     <Wrapper className="tween">
-      <Logo image={"home-logo-2.png"} />
+      <Logo href="/" image={"home-logo-2.png"} />
       <Spacer />
       <Link href="/system">System</Link>
       <Link href="/how-it-works">How it Works</Link>

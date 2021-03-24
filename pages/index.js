@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Controller, Scene } from 'react-scrollmagic'
 import { Tween } from 'react-gsap';
-import { Page, Button, Footer } from 'components/Shared'
+import { Page, Button } from 'components/Shared'
+import Footer from 'components/Footer'
 import Header, { Logo } from 'components/Header'
 import { PosterWindow, Poster, Content, HalfHalf, HalfImage, HalfText } from 'components/Home'
 import useScrollPosition from '@h/use-scroll-position'
 import useWindowSize from '@h/use-window-size'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faArrowRight, faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
 
@@ -132,42 +132,7 @@ function Home() {
           </HalfText>
         </HalfHalf>
       </Page>
-      <Footer.Wrapper>
-        <Footer.Column>
-          <Logo className="logo" image="home-logo.png" />
-          <div><a href="/">System</a></div>
-          <div><a href="/">How it Works</a></div>
-          <div><a href="/">Evaluation</a></div>
-          <div><a href="/">Budget</a></div>
-          <div><a href="/">Team</a></div>
-        </Footer.Column>
-
-        <Footer.Column>
-          <h3>
-            <FontAwesomeIcon icon={faGithub} />
-            &nbsp;
-            Repositories
-          </h3>
-          <div><a href="/">Android App</a></div>
-          <div><a href="/">Hardware</a></div>
-          <div><a href="/">Android App</a></div>
-        </Footer.Column>
-
-        <Footer.Column>
-          <h3>Acknowledgements</h3>
-          <div><a href="https://icons8.com">Icons8</a></div>
-          <div><a href="https://fontawesome.com">Font Awesome</a></div>
-        </Footer.Column>
-
-        <Footer.Column>
-          <h3>More</h3>
-          <div><a href="/">System</a></div>
-          <div><a href="/">How it Works</a></div>
-          <div><a href="/">Evaluation</a></div>
-          <div><a href="/">Budget</a></div>
-          <div><a href="/">Team</a></div>
-        </Footer.Column>
-      </Footer.Wrapper>
+      <Footer />
     </>
   );
 };

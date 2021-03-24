@@ -3,10 +3,26 @@ import styled from 'styled-components'
 export const Page = styled.div`
   width: 70%;
   margin: 0 auto;
-  padding: 0;
-  min-height: 100vh;
-`;
+  padding: 0 0 150px 0;
+  // min-height: 100vh;
 
+  h1 {
+    font-size: 50px;
+    color: var(--v-dark-purple);
+    margin: 50px 0 20px;
+  }
+
+  span {
+    font-size: 16px;
+    font-family: var(--secondary-font);
+    color: var(--secondary-label-color);
+    margin: 20px 0;
+  }
+
+  & > span {
+    display: block;
+  }
+`;
 
 export const Button = styled.div`
   margin-top: 20px;
@@ -19,56 +35,10 @@ export const Button = styled.div`
   border-radius: 33px;
 `;
 
-const FooterWrapper = styled.div`
-  display: flex;
-  background-color: var(--v-dark-purple);
-  padding: 50px 100px;
-
-  div {
-    width: calc(25%);
-  }
+export const Poster = styled.div`
+  height: 40vh;
+  background: url("images/${props => props.image}") center center no-repeat;
+  background-color: ${props => props.color || 'purple'};
+  background-size: auto 75%;
+  object-fit: contain;
 `;
-
-const FooterColumn = styled.div`
-
-  .logo {
-    height: 50px;
-    width: auto;
-  }
-
-  h3 {
-    font-family: var(--secondary-font);
-    font-size: 24px;
-    color: white;
-  }
-
-  & > div {
-    width: 100%;
-    margin: 20px 0;
-
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      font-family: var(--primary-font);
-      background: linear-gradient(
-        to bottom, white 0%,
-        white 100%
-      );
-      background-position: 0 100%;
-      background-repeat: repeat-x;
-      background-size: 0.1px 0.1px;
-      transition: background-size .5s, color .5s;
-    }
-    
-    a:hover {
-      background-size: 4px 50px;
-      color: var(--v-purple);
-    }
-  }
-`;
-
-export const Footer = {
-  Wrapper: FooterWrapper,
-  Column: FooterColumn,
-}
