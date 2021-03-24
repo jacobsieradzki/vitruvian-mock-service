@@ -7,10 +7,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "firebase": "^8.3.0",
+    "gsap": "^3.6.0",
     "next": "latest",
+    "next-images": "^1.7.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-gsap": "^2.2.1",
+    "react-scrollmagic": "^2.2.0",
+    "styled-components": "^5.2.1",
     "swr": "^0.1.18"
   },
   "license": "MIT"
