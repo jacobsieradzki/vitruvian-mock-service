@@ -38,6 +38,7 @@ export default class CustomDocument extends Document {
           {/* Google fonts: prefetch/preconnect */}
           <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </Head>
 
         <body>

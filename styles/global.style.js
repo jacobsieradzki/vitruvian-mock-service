@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  h1 {
+  h1, h2, h3 {
     font-family: var(--title-font);
   }
 

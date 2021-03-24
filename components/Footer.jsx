@@ -61,11 +61,12 @@ export default function element() { return (
   <Footer.Wrapper>
     <Footer.Column>
       <Logo className="logo" image="home-logo.png" />
-      <div><a href="/">System</a></div>
-      <div><a href="/">How it Works</a></div>
-      <div><a href="/">Evaluation</a></div>
-      <div><a href="/">Budget</a></div>
-      <div><a href="/">Team</a></div>
+      <div><a href="/">Home</a></div>
+      <div><a href="/system">System</a></div>
+      <div><a href="/how-it-works">How it Works</a></div>
+      <div><a href="/evaluation">Evaluation</a></div>
+      <div><a href="/budget">Budget</a></div>
+      <div><a href="/team">Team</a></div>
     </Footer.Column>
 
     <Footer.Column>
@@ -74,15 +75,16 @@ export default function element() { return (
         &nbsp;
         Repositories
       </h3>
-      <div><a href="/">Android App</a></div>
-      <div><a href="/">Hardware</a></div>
-      <div><a href="/">Android App</a></div>
+      <div><a href="https://github.com/jacobsieradzki/vitruvian-mock-service">Website &amp; Server</a></div>
+      <div><a href="https://github.com/jacobsieradzki/vitruvian-hardware">Hardware</a></div>
+      <div><a href="https://github.com/ionescuanelise/Vitruvian">Android App</a></div>
     </Footer.Column>
 
     <Footer.Column>
       <h3>Acknowledgements</h3>
       <div><a href="https://icons8.com">Icons8</a></div>
       <div><a href="https://fontawesome.com">Font Awesome</a></div>
+      <div><a href="https://rotato.xyz">Rotato</a></div>
     </Footer.Column>
 
     <Footer.Column>

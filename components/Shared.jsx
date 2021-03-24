@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const Page = styled.div`
   width: 70%;
   margin: 0 auto;
-  padding: 0 0 150px 0;
-  // min-height: 100vh;
+  padding: 0 0 50px 0;
 
   h1 {
     font-size: 50px;
@@ -24,7 +23,7 @@ export const Page = styled.div`
   }
 `;
 
-export const Button = styled.div`
+export const Button = styled.a`
   margin-top: 20px;
   padding: 20px 25px;
   background-color: var(--v-dark-purple);
@@ -33,6 +32,7 @@ export const Button = styled.div`
   color: white;
   font-size: 20px;
   border-radius: 33px;
+  text-decoration: none;
 `;
 
 export const Poster = styled.div`

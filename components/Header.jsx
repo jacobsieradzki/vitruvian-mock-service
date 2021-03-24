@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   padding: 20px;
   background-color: var(--background-color);
   border-bottom: 1px var(--separator-color) solid;
+  z-index: 1000;
 `;
 
 export const Spacer = styled.div`

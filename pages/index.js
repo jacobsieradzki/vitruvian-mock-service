@@ -1,22 +1,33 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Controller, Scene } from 'react-scrollmagic'
+import Fade from 'react-reveal';
 import { Tween } from 'react-gsap';
 import { Page, Button } from 'components/Shared'
 import Footer from 'components/Footer'
 import Header, { Logo } from 'components/Header'
 import { PosterWindow, Poster, Content, HalfHalf, HalfImage, HalfText } from 'components/Home'
-import useScrollPosition from '@h/use-scroll-position'
-import useWindowSize from '@h/use-window-size'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import useScrollPosition from '@h/use-scroll-position';
+import Jump from 'react-reveal/Jump';
 
 function Home() {
-
+  const appRef = useRef(null);
+  const playerRef = useRef(null);
   const scroll = useScrollPosition();
-  const { width, height } = useWindowSize();
-  // console.log(scroll, width, height);
 
-  const headerFilled = scroll >= height - 300; 
+  const y = scroll - appRef?.current?.offsetTop ?? 0
+  const h = appRef?.current?.offsetHeight || 1;
+  const progress = Math.max(0, Math.min(y / (h - 500), 1));
+  const progressStr = `${Math.round(progress * 100)}%`;
+  playerRef?.current?.seek(progressStr);
+
+  const animSize = appRef?.current?.offsetWidth || 250;
+
+  const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }, []);
 
   return (
     <>
@@ -56,11 +67,13 @@ function Home() {
                   </Content.Top>
                   <Content.Spacer />
                   <Content.Bottom>
-                    <p>
-                      <FontAwesomeIcon icon={faArrowDown} />
-                      &nbsp;
-                      Read more
-                    </p>
+                    <Jump>
+                      <p>
+                        <FontAwesomeIcon icon={faArrowDown} />
+                        &nbsp;
+                        Read more
+                      </p>
+                    </Jump>
                     <a href='https://play.google.com/store/?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
                   </Content.Bottom>
                 </Content.Window>
@@ -71,66 +84,98 @@ function Home() {
       </Controller>
 
       <Page id="home">
-        <HalfHalf>
-          <HalfImage image="system.png" />
-          <HalfText>
-            <h2>System</h2>
+        <HalfHalf className="app">
+          <HalfText ref={appRef}>
+            <h2>Straight to your phone!</h2>
             <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <Button>
-              Our System
-              &nbsp;
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
-          </HalfText>
-        </HalfHalf>
-        <HalfHalf>
-          <HalfText>
-            <h2>How it Works</h2>
             <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <Button>
-              How it Works
-              &nbsp;
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
-          </HalfText>
-          <HalfImage image="how-it-works.png" />
-        </HalfHalf>
-        <HalfHalf>
-          <HalfImage image="evaluation.png" />
-          <HalfText>
-            <h2>Evaluation</h2>
             <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <Button>
-              Read Evaluation
-              &nbsp;
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
-          </HalfText>
-        </HalfHalf>
-        <HalfHalf>
-          <HalfText>
-            <h2>Budget</h2>
             <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <Button>
-              Read Budget
-              &nbsp;
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
-          </HalfText>
-          <HalfImage image="budget.png" />
-        </HalfHalf>
-        <HalfHalf>
-          <HalfImage image="team.png" />
-          <HalfText>
-            <h2>Team</h2>
             <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <Button>
-              Our Team
-              &nbsp;
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
+            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+            <a className="gplay" href='https://play.google.com/store/?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
           </HalfText>
+            <HalfImage className="app-image">
+              <lottie-player
+                ref={playerRef}
+                src={darkMode ? "/assets/home-phone-dark.json" : "/assets/home-phone.json"}
+                background="transparent" 
+                renderer="canvas" 
+                progress={progress}
+                style={{ width: animSize, height: animSize }} 
+              />
+            </HalfImage>
         </HalfHalf>
+        <Fade left>
+          <HalfHalf>
+            <HalfImage image="system.png" />
+            <HalfText>
+              <h2>System</h2>
+              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <Button href="/system">
+                Our System
+                &nbsp;
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </HalfText>
+          </HalfHalf>
+        </Fade>
+        <Fade right>
+          <HalfHalf>
+            <HalfText>
+              <h2>How it Works</h2>
+              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <Button href="/how-it-works">
+                How it Works
+                &nbsp;
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </HalfText>
+            <HalfImage image="how-it-works.png" />
+          </HalfHalf>
+        </Fade>
+        <Fade left>
+          <HalfHalf>
+            <HalfImage image="evaluation.png" />
+            <HalfText>
+              <h2>Evaluation</h2>
+              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <Button href="/evaluation">
+                Read Evaluation
+                &nbsp;
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </HalfText>
+          </HalfHalf>
+        </Fade>
+        <Fade right>
+          <HalfHalf>
+            <HalfText>
+              <h2>Budget</h2>
+              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <Button href="/budget">
+                Read Budget
+                &nbsp;
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </HalfText>
+            <HalfImage image="budget.png" />
+          </HalfHalf>
+        </Fade>
+        <Fade left>
+          <HalfHalf>
+            <HalfImage image="team.png" />
+            <HalfText>
+              <h2>Team</h2>
+              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <Button href="/team">
+                Our Team
+                &nbsp;
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </HalfText>
+          </HalfHalf>
+        </Fade>
       </Page>
       <Footer />
     </>

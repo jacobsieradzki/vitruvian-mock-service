@@ -61,6 +61,26 @@ export const Content = {
   Bottom: ContentBottom,
 }
 
+const App = `
+
+  .app-image {
+    position: sticky;
+    top: 200px;
+    margin: 0;
+    height: 100%;
+  }
+
+  .scrollmagic-pin-spacer {
+    background-color: purple;
+    height: 100%;
+  }
+
+  img {
+    height: 80px;
+  }
+
+`;
+
 export const HalfHalf = styled.div`
   display: flex;
   margin: 100px 0;
@@ -70,6 +90,10 @@ export const HalfHalf = styled.div`
     color: var(--v-dark-purple);
   }
   p { font-size: 20px; }
+
+  &.app { 
+    ${App} 
+  }
 `;
 
 export const HalfImage = styled.div`
