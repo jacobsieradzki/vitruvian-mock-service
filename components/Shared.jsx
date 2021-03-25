@@ -5,13 +5,13 @@ export const Page = styled.div`
   margin: 0 auto;
   padding: 0 0 50px 0;
 
-  h1 {
+  & > h1 {
     font-size: 50px;
     color: var(--v-dark-purple);
     margin: 50px 0 20px;
   }
 
-  span {
+  & > span {
     font-size: 16px;
     font-family: var(--secondary-font);
     color: var(--secondary-label-color);

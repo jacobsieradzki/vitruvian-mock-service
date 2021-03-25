@@ -32,12 +32,13 @@ const Window = styled.div`
 `;
 
 const ContentTop = styled.div`
-
+  margin: 0;
 `;
 
 const ContentSpacer = styled.div`
   flex-grow: 2;
   width: 100%;
+  background-color: clear;
 `;
 
 const ContentBottom = styled.div`
