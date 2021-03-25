@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import useScrollPosition from '@h/use-scroll-position';
 import Jump from 'react-reveal/Jump';
+import { DiscussionEmbed } from 'disqus-react'
 
 function Home() {
   const appRef = useRef(null);
@@ -176,7 +177,19 @@ function Home() {
             </HalfText>
           </HalfHalf>
         </Fade>
+
+        <DiscussionEmbed 
+          shortname="vitruvian"
+          config={{
+            title: "Vitruvian - Team Vee",
+            identifier: "vitruvian",
+            url: "https://vitruvian.jakeryan.co.uk",
+            language: "en_GB",
+          }}
+        />
+
       </Page>
+
       <Footer />
     </>
   );

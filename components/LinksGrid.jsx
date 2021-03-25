@@ -7,7 +7,7 @@ const Title = styled.h2`
 `;
 
 const Grid = styled.div`
-  margin: 0 -10px 0;
+  margin: 0 -10px 50px;
   display: flex;
   flex-flow: row wrap;
 `;
