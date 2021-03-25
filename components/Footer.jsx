@@ -81,19 +81,16 @@ export default function element() { return (
     </Footer.Column>
 
     <Footer.Column>
+      <h3>More</h3>
+      <div><a href="/api-docs">API</a></div>
+    </Footer.Column>
+
+    <Footer.Column>
       <h3>Acknowledgements</h3>
       <div><a href="https://icons8.com">Icons8</a></div>
       <div><a href="https://fontawesome.com">Font Awesome</a></div>
       <div><a href="https://rotato.xyz">Rotato</a></div>
     </Footer.Column>
 
-    <Footer.Column>
-      <h3>More</h3>
-      <div><a href="/">System</a></div>
-      <div><a href="/">How it Works</a></div>
-      <div><a href="/">Evaluation</a></div>
-      <div><a href="/">Budget</a></div>
-      <div><a href="/">Team</a></div>
-    </Footer.Column>
   </Footer.Wrapper>
 )}
