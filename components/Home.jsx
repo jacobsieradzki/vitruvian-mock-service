@@ -28,7 +28,11 @@ const Window = styled.div`
     font-size: 70px;
     color: var(--v-dark-purple);
   }
-  p { font-size: 24px; }
+
+  p { 
+    font-size: 24px;
+    color: var(--tertiary-label-color);
+  }
 `;
 
 const ContentTop = styled.div`

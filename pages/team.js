@@ -16,6 +16,7 @@ function Home() {
       <Page>
         <h1>Team</h1>
         <p>This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... </p>
+        <img src="/images/team_photo.png" alt="Vitruvian Team Photo" />
         <LinksGrid i={4} />
 
         <DiscussionEmbed 

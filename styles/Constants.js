@@ -14,6 +14,7 @@ export const Colors = `
 
   --primary-label-color: rgb(0, 0, 0);
   --secondary-label-color: rgba(60, 60, 67, 0.60);
+  --tertiary-label-color: #655353;
 `;
 
 export const Fonts = `

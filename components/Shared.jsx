@@ -11,6 +11,10 @@ export const Page = styled.div`
     margin: 50px 0 20px;
   }
 
+  p {
+    color: var(--tertiary-label-color);
+  }
+
   & > span {
     font-size: 16px;
     font-family: var(--secondary-font);
@@ -21,12 +25,18 @@ export const Page = styled.div`
   & > span {
     display: block;
   }
+
+  img {
+    display: block;
+    width: 80%;
+    margin: 50px auto 20px;
+  }
 `;
 
 export const Button = styled.a`
   margin-top: 20px;
   padding: 20px 25px;
-  background-color: var(--v-dark-purple);
+  background-color: var(--v-purple);
   display: inline-block;
   font-family: var(--secondary-font);
   color: white;

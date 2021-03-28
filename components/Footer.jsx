@@ -29,12 +29,13 @@ h3 {
 & > div {
   width: 100%;
   margin: 20px 0;
+  color: white;
+  font-family: var(--primary-font);
 
   a {
     color: white;
     text-decoration: none;
     font-size: 20px;
-    font-family: var(--primary-font);
     background: linear-gradient(
       to bottom, white 0%,
       white 100%
@@ -53,8 +54,8 @@ h3 {
 `;
 
 export const Footer = {
-Wrapper: FooterWrapper,
-Column: FooterColumn,
+  Wrapper: FooterWrapper,
+  Column: FooterColumn,
 }
 
 export default function element() { return (
@@ -87,9 +88,10 @@ export default function element() { return (
 
     <Footer.Column>
       <h3>Acknowledgements</h3>
-      <div><a href="https://icons8.com">Icons8</a></div>
-      <div><a href="https://fontawesome.com">Font Awesome</a></div>
-      <div><a href="https://rotato.xyz">Rotato</a></div>
+      <div>Icons from <a href="https://icons8.com">Icons8</a></div>
+      <div>Icons from <a href="https://fontawesome.com">Font Awesome</a></div>
+      <div>Animation from <a href="https://rotato.xyz">Rotato</a></div>
+      <div>Sounds from <a href="https://www.zapsplat.com">ZapSplat</a></div>
     </Footer.Column>
 
   </Footer.Wrapper>
