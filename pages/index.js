@@ -177,6 +177,20 @@ function Home() {
             </HalfText>
           </HalfHalf>
         </Fade>
+        <Fade up>
+          <HalfHalf>
+            <HalfImage image="user_guide_image.png" />
+            <HalfText>
+              <h2>User Guide</h2>
+              <p>View our User Guide for information on setting up your device, installing the Android application, using your device and troubleshooting advice.</p>
+              <Button href="https://www.canva.com/design/DAEZniKPzZU/nR8vMhVSUdejoEKu2qS_gA/view?utm_content=DAEZniKPzZU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1">
+                Read
+                &nbsp;
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </HalfText>
+          </HalfHalf>
+        </Fade>
 
         <DiscussionEmbed 
           shortname="vitruvian"
