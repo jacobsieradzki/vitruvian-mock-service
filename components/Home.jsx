@@ -88,7 +88,7 @@ const App = `
 
 export const HalfHalf = styled.div`
   display: flex;
-  margin: 100px 0;
+  margin: 15px 0;
 
   h2 { 
     font-size: 40px;

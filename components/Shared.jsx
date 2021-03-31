@@ -31,6 +31,14 @@ export const Page = styled.div`
     width: 80%;
     margin: 50px auto 20px;
   }
+
+  #video {
+    display: block;
+    width: 80%;
+    height: 50vh;
+    margin: 50px auto 15px;
+    border: none;
+  }
 `;
 
 export const Button = styled.a`

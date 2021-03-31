@@ -85,6 +85,7 @@ function Home() {
       </Controller>
 
       <Page id="home">
+        <iframe id="video" src="https://www.youtube.com/embed/xj14pMFJlm0?autoplay=true"></iframe>
         <HalfHalf className="app">
           <HalfText ref={appRef}>
             <h2>Straight to your phone!</h2>
@@ -183,7 +184,7 @@ function Home() {
             <HalfText>
               <h2>User Guide</h2>
               <p>View our User Guide for information on setting up your device, installing the Android application, using your device and troubleshooting advice.</p>
-              <Button href="https://www.canva.com/design/DAEZniKPzZU/nR8vMhVSUdejoEKu2qS_gA/view?utm_content=DAEZniKPzZU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1">
+              <Button href="/user_guide.pdf">
                 Read
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
