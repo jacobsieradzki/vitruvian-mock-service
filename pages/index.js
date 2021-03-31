@@ -25,11 +25,6 @@ function Home() {
 
   const animSize = appRef?.current?.offsetWidth || 250;
 
-  const [darkMode, setDarkMode] = useState(false);
-  useEffect(() => {
-    setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-  }, []);
-
   return (
     <>
       <Controller>
@@ -58,13 +53,16 @@ function Home() {
               paused
             >
               <PosterWindow id="poster" className="tween">
-                <Poster>
+                <Poster image="home_poster.png">
                   <Logo className="logo" image={"home-logo.png"} />
                 </Poster>
                 <Content.Window>
                   <Content.Top>
-                    <h1>Let's fix your posture</h1>
-                    <p>Our project aims to help improve people’s posture and health while working from home by monitoring sedentary activity and posture, notifying them via an app or by tactile feedback on a worn device.</p>
+                    <h1>Bad posture? Let's fix it.</h1>
+                    <Fade>
+                      <p>Introducing Vitruvian, a compact and lightweight device that attaches unobtrusively to your body with a light and comfortable vest. </p>
+                      <p>Our project aims to help improve people’s posture and health while working from home.</p>
+                    </Fade>
                   </Content.Top>
                   <Content.Spacer />
                   <Content.Bottom>
@@ -85,22 +83,32 @@ function Home() {
       </Controller>
 
       <Page id="home">
-        <iframe id="video" src="https://www.youtube.com/embed/xj14pMFJlm0?autoplay=true"></iframe>
+
+        <Fade>
+          <p>Vitruvian detects if you are slouching or sitting for a long period of time and provides real-time feedback as a vibration and a sound, which can be configured in the accompanying Android app. The system intelligently detects between the user quickly bending over and the user slouching for an extended period. Using machine learning, the system can even detect if you are sitting, standing, walking and more!</p>
+          <iframe id="video" src="https://www.youtube.com/embed/xj14pMFJlm0?autoplay=true"></iframe>
+        </Fade>        
+
         <HalfHalf className="app">
           <HalfText ref={appRef}>
             <h2>Straight to your phone!</h2>
-            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
-            <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+            <p>Vitruvian pairs with your Android phone via Bluetooth and syncs all of your activity data throughout the day.</p>
+            <p>View real-time posture scores as well as historical insights to track your progress. The app intelligently keeps all data for the current month and shows you averages for previous months since you started, to save vital space on your phone.</p>
+            <p>We realise that sometimes you don’t your device to be playing a sound at work, or the vibrations may get annoying all day – which is why we included a feature to configure alerts to suit you from the app. </p>
+            <p>We want everyone to feel included through design, so we included a feature that allows you to change your character that appears on the main screen to suit you.</p>
+            <p>The app supports <b>dark mode</b> to help avoid visual fatigue. All colours are <a href="https://www.w3.org/TR/WCAG21/" target="_blank">WCAG</a> AAA compliant and all designs were built from scratch following <a href="https://material.io/" target="_blank">Material Design</a> best practices.</p>
+            <p>We also wanted the app to be colour deficiency and colour blind friendly – meaning all screens have been tested against 4 different types of visual defects, especially data visualisation.</p>
             <a className="gplay" href='https://play.google.com/store/?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+            <Button href="/system">
+              Read more
+              &nbsp;
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Button>
           </HalfText>
             <HalfImage className="app-image">
               <lottie-player
                 ref={playerRef}
-                src={darkMode ? "/assets/home-phone-dark.json" : "/assets/home-phone.json"}
+                src="/assets/home-phone.json"
                 background="transparent" 
                 renderer="canvas" 
                 progress={progress}
@@ -113,9 +121,10 @@ function Home() {
             <HalfImage image="system.png" />
             <HalfText>
               <h2>System</h2>
-              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <p>Our system is powered by a <b>Raspberry Pi Zero</b> and two <b>MPU-9250</b>s, which connects to the accompanying Android app via Bluetooth.</p>
+              <p>The low-power components give the system enough battery to make it all the way through the work day!</p>
               <Button href="/system">
-                Our System
+                Read more
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
@@ -126,9 +135,10 @@ function Home() {
           <HalfHalf>
             <HalfText>
               <h2>How it Works</h2>
-              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <p>Using two sensors on the back, Vitruvian calculates the angle and curvature of your back, and ignores any general movements.</p>
+              <p>Vitruvian will send you an alert if you've been slouching or sitting down for too long.</p>
               <Button href="/how-it-works">
-                How it Works
+                Read more
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
@@ -141,9 +151,11 @@ function Home() {
             <HalfImage image="evaluation.png" />
             <HalfText>
               <h2>Evaluation</h2>
-              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <p>Our evaluation included creating tests for our slouch detection and sedentary detection algorithms to verify their accuracy.</p>
+              <p>We created tests using Webots, asking the technicians to perform tasks and using our own iOS accelerometer tool.</p>
+              <p></p>
               <Button href="/evaluation">
-                Read Evaluation
+                Read more
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
@@ -154,9 +166,9 @@ function Home() {
           <HalfHalf>
             <HalfText>
               <h2>Budget</h2>
-              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <p>Our budget outlines our use of technician time throughout the project and a cost to build a Vitruvian device.</p>
               <Button href="/budget">
-                Read Budget
+                Read more
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
@@ -169,9 +181,9 @@ function Home() {
             <HalfImage image="team.png" />
             <HalfText>
               <h2>Team</h2>
-              <p>This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... This is some text .... </p>
+              <p>This section outlines the responsibilities of each team member and how tasks were planned and organised.</p>
               <Button href="/team">
-                Our Team
+                Read more
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
@@ -180,7 +192,7 @@ function Home() {
         </Fade>
         <Fade up>
           <HalfHalf>
-            <HalfImage image="user_guide_image.png" />
+            <HalfImage image="user_guide.png" />
             <HalfText>
               <h2>User Guide</h2>
               <p>View our User Guide for information on setting up your device, installing the Android application, using your device and troubleshooting advice.</p>

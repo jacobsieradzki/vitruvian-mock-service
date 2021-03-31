@@ -5,13 +5,14 @@ export const Page = styled.div`
   margin: 0 auto;
   padding: 0 0 50px 0;
 
-  & > h1 {
+  & > h1, h2 {
     font-size: 50px;
     color: var(--v-dark-purple);
     margin: 50px 0 20px;
   }
 
-  p {
+  p { 
+    font-size: 24px;
     color: var(--tertiary-label-color);
   }
 
@@ -32,12 +33,29 @@ export const Page = styled.div`
     margin: 50px auto 20px;
   }
 
+  &#home {
+    margin-top: 100px;
+  }
+
   #video {
     display: block;
     width: 80%;
     height: 50vh;
     margin: 50px auto 15px;
     border: none;
+  }
+
+  #disqus_thread {
+    margin-top: 50px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
+
+    #video {
+      width: 100%;
+      height: 300px;
+    }
   }
 `;
 

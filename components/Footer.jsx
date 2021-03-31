@@ -4,53 +4,56 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const FooterWrapper = styled.div`
-display: flex;
-background-color: var(--v-dark-purple);
-padding: 50px 100px;
+  display: flex;
+  background-color: var(--v-dark-purple);
+  padding: 50px 100px;
 
-div {
-  width: calc(25%);
-}
+  div { width: calc(25%); }
+
+  @media (max-width: 1024px) {
+    flex-flow: column nowrap;
+    padding: 50px 25px;
+    div { width: 100%; }
+  }
 `;
 
 const FooterColumn = styled.div`
+  .logo {
+    height: 50px;
+    width: auto;
+  }
 
-.logo {
-  height: 50px;
-  width: auto;
-}
-
-h3 {
-  font-family: var(--secondary-font);
-  font-size: 24px;
-  color: white;
-}
-
-& > div {
-  width: 100%;
-  margin: 20px 0;
-  color: white;
-  font-family: var(--primary-font);
-
-  a {
+  h3 {
+    font-family: var(--secondary-font);
+    font-size: 24px;
     color: white;
-    text-decoration: none;
-    font-size: 20px;
-    background: linear-gradient(
-      to bottom, white 0%,
-      white 100%
-    );
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 0.1px 0.1px;
-    transition: background-size .5s, color .5s;
   }
-  
-  a:hover {
-    background-size: 4px 50px;
-    color: var(--v-purple);
+
+  & > div {
+    width: 100%;
+    margin: 20px 0;
+    color: white;
+    font-family: var(--primary-font);
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      background: linear-gradient(
+        to bottom, white 0%,
+        white 100%
+      );
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      background-size: 0.1px 0.1px;
+      transition: background-size .5s, color .5s;
+    }
+    
+    a:hover {
+      background-size: 4px 50px;
+      color: var(--v-purple);
+    }
   }
-}
 `;
 
 export const Footer = {

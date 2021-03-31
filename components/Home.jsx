@@ -4,6 +4,10 @@ export const PosterWindow = styled.div`
   display: flex;
   min-height: 100vh;
   margin-top: -120px;
+
+  @media (max-width: 1024px) {
+    flex-flow: column nowrap;
+  }
 `;
 
 export const Poster = styled.div`
@@ -13,6 +17,14 @@ export const Poster = styled.div`
 
   .logo {
     height: 100px;
+  }
+
+  background: var(--v-dark-purple) url("images/${props => props.image}") center center no-repeat;
+  background-size: 75% auto;
+
+  @media (max-width: 1024px) {
+    width: calc(100% - 80px);
+    height: 80vh;
   }
 `;
 
@@ -32,6 +44,12 @@ const Window = styled.div`
   p { 
     font-size: 24px;
     color: var(--tertiary-label-color);
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    margin: 10px auto;
+    padding: 0;
   }
 `;
 
@@ -57,6 +75,12 @@ const ContentBottom = styled.div`
   img {
     height: 80px;
   }
+
+  @media (max-width: 1024px) {
+    p {
+      display: none;
+    }
+  }
 `;
 
 export const Content = {
@@ -81,7 +105,9 @@ const App = `
   }
 
   img {
+    margin: 0;
     height: 80px;
+    width: auto;
   }
 
 `;
@@ -99,6 +125,10 @@ export const HalfHalf = styled.div`
   &.app { 
     ${App} 
   }
+
+  @media (max-width: 1024px) {
+    flex-flow: column;
+  }
 `;
 
 export const HalfImage = styled.div`
@@ -106,6 +136,13 @@ export const HalfImage = styled.div`
   background: url("images/${props => props.image}") center center no-repeat;
   background-size: 75% auto;
   object-fit: contain;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 50vh;
+    align-self: flex-start;
+    display: none;
+  }
 `;
 
 export const HalfText = styled.div`
@@ -114,5 +151,11 @@ export const HalfText = styled.div`
 
   &::first-child {
     text-align: right;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    align-self: flex-end;
+    padding: 0;
   }
 `;

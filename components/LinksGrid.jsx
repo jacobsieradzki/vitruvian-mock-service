@@ -38,6 +38,10 @@ const Item = styled.a`
     height: 100px;
     object-fit: contain;
   }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 export default function LinksGrid({ i }) {

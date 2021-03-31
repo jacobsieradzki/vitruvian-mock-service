@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { Colors, Fonts } from './Constants'
+import { Colors, DarkModeColors, Fonts } from './Constants'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -7,8 +7,15 @@ const GlobalStyle = createGlobalStyle`
     ${Fonts}
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      ${DarkModeColors}
+    }
+  }
+
   body {
     margin: 0;
+    background-color: var(--background-color);
   }
 
   h1, h2, h3 {
@@ -17,6 +24,14 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: var(--primary-font);
+  }
+
+  .vmobile { display: none; }
+  .vdesktop { display: inherit; }
+
+  @media (max-width: 1024px) {
+    .vmobile { display: block; }
+    .vdesktop { display: none; }
   }
 `;
 
