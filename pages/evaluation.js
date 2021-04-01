@@ -15,10 +15,11 @@ function Home() {
       <Poster image="evaluation.png" color="#f4a261" />
       <Page>
         <h1>Evaluation</h1>
-        <p>This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... </p>
+        <p>Our evaluation involved testing both sedentary and slouch detection features on human body models in simulated environments as well as carrying out real-life tests on human body.</p>
 
         <h3>Sedentary Detection</h3>
         <p>We ran extensive black-box and white-box accuracy testing on our Sedentary detection feature. And by combining our 87% accurate deep learning model with the high-level sedentary detection algorithm the accuracy will jump up to 100%.</p>
+        <p>We also stress tested our algorithm on a sitting human body by adding some noise like stretching, rotating chair and moving legs around. And our final accuracy for detecting sedentary was still achieving up to 100% accuracy.</p>
 
         <h3>Slouch Detection</h3>
         <p>We firstly carried out basic real-life testing of our system. While the outcome of these tests is not as easy to precisely analyse as Webots testing (as it is difficult to attach exact outputs to the console to the same point in a provided video to prove when detection takes place), it still serves as a useful demonstration, showing that detection occurs, and the buzzer goes off when slouching is done. This allowed us to set an improved threshold and measure the behavior of a human back slouching. Thus, we were able to refine our webots tests and provide exact values for the slouching detection algorithm.</p>

@@ -94,7 +94,7 @@ function Home() {
             <h2>Straight to your phone!</h2>
             <p>Vitruvian pairs with your Android phone via Bluetooth and syncs all of your activity data throughout the day.</p>
             <p>View real-time posture scores as well as historical insights to track your progress. The app intelligently keeps all data for the current month and shows you averages for previous months since you started, to save vital space on your phone.</p>
-            <p>We realise that sometimes you don’t your device to be playing a sound at work, or the vibrations may get annoying all day – which is why we included a feature to configure alerts to suit you from the app. </p>
+            <p>We realise that sometimes you don’t want your device to be playing a sound at work, or the vibrations may get annoying all day – which is why we included a feature to configure alerts to suit you from the app. </p>
             <p>We want everyone to feel included through design, so we included a feature that allows you to change your character that appears on the main screen to suit you.</p>
             <p>The app supports <b>dark mode</b> to help avoid visual fatigue. All colours are <a href="https://www.w3.org/TR/WCAG21/" target="_blank">WCAG</a> AAA compliant and all designs were built from scratch following <a href="https://material.io/" target="_blank">Material Design</a> best practices.</p>
             <p>We also wanted the app to be colour deficiency and colour blind friendly – meaning all screens have been tested against 4 different types of visual defects, especially data visualisation.</p>
