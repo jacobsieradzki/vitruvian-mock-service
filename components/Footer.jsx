@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { Logo } from 'components/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faSketch, faTrello } from '@fortawesome/free-brands-svg-icons'
+import { faFileAlt, faHome, faToolbox, faTools } from '@fortawesome/free-solid-svg-icons';
 
 const FooterWrapper = styled.div`
   display: flex;
@@ -64,13 +65,36 @@ export const Footer = {
 export default function element() { return (
   <Footer.Wrapper>
     <Footer.Column>
-      <Logo className="logo" image="home-logo.png" />
-      <div><a href="/">Home</a></div>
+      <h3>Vitruvian</h3>
       <div><a href="/system">System</a></div>
       <div><a href="/how-it-works">How it Works</a></div>
       <div><a href="/evaluation">Evaluation</a></div>
       <div><a href="/budget">Budget</a></div>
       <div><a href="/team">Team</a></div>
+    </Footer.Column>
+
+    <Footer.Column>
+      <h3>More</h3>
+      <div>
+        <FontAwesomeIcon icon={faFileAlt} />
+        &nbsp;&nbsp;
+        <a href="/submissions">SDP Submissions</a>
+      </div>
+      <div>
+        <FontAwesomeIcon icon={faSketch} />
+        &nbsp;&nbsp;
+        <a href="https://sketch.com/s/785945b0-72bc-47c6-8ca9-95a40fc94b4b">Design Document</a>
+      </div>
+      <div>
+        <FontAwesomeIcon icon={faTrello} />
+        &nbsp;&nbsp;
+        <a href="https://trello.com/b/p6Z1ew26/vitruvian">Trello Board</a>
+      </div>
+      <div>
+        <FontAwesomeIcon icon={faTools} />
+        &nbsp;&nbsp;
+        <a href="/api-docs">API</a>
+      </div>
     </Footer.Column>
 
     <Footer.Column>
@@ -82,11 +106,6 @@ export default function element() { return (
       <div><a href="https://github.com/jacobsieradzki/vitruvian-mock-service">Website &amp; Server</a></div>
       <div><a href="https://github.com/jacobsieradzki/vitruvian-hardware">Hardware</a></div>
       <div><a href="https://github.com/ionescuanelise/Vitruvian">Android App</a></div>
-    </Footer.Column>
-
-    <Footer.Column>
-      <h3>More</h3>
-      <div><a href="/api-docs">API</a></div>
     </Footer.Column>
 
     <Footer.Column>

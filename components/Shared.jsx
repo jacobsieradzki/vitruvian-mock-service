@@ -11,6 +11,14 @@ export const Page = styled.div`
     margin: 50px 0 20px;
   }
 
+  & > h2 {
+    font-size: 40px;
+  }
+
+  & > h3 {
+    font-size: 32px;
+  }
+
   p { 
     font-size: 24px;
     color: var(--tertiary-label-color);
@@ -37,7 +45,7 @@ export const Page = styled.div`
     margin-top: 100px;
   }
 
-  #video {
+  .video {
     display: block;
     width: 80%;
     height: 50vh;
@@ -52,7 +60,7 @@ export const Page = styled.div`
   @media (max-width: 1024px) {
     width: 80%;
 
-    #video {
+    .video {
       width: 100%;
       height: 300px;
     }

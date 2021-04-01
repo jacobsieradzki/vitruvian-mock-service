@@ -17,7 +17,7 @@ function Home() {
         <h1>System</h1>
         <span>Last updated by ### on 24 March, 2021</span>
         <p>This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... </p>
-        <LinksGrid i={0} />
+        <LinksGrid exclude="SYSTEM" />
 
         <DiscussionEmbed 
           shortname="vitruvian"

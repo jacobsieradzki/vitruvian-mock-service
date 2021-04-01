@@ -16,7 +16,8 @@ function Home() {
       <Page>
         <h1>Evaluation</h1>
         <p>This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... </p>
-        <LinksGrid i={2} />
+        <LinksGrid exclude="EVALUATION" />
+
         <DiscussionEmbed 
           shortname="vitruvian"
           config={{

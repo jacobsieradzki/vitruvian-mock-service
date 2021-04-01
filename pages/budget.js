@@ -16,7 +16,7 @@ function Home() {
       <Page>
         <h1>Budget</h1>
         <p>This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... </p>
-        <LinksGrid i={3} />
+        <LinksGrid exclude="BUDGET" />
 
         <DiscussionEmbed 
           shortname="vitruvian"

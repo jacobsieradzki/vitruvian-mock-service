@@ -2,7 +2,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components'
 
-const Title = styled.h2`
+const Title = styled.h3`
   margin-top: 100px;
 `;
 
@@ -44,36 +44,36 @@ const Item = styled.a`
   }
 `;
 
-export default function LinksGrid({ i }) {
+export default function LinksGrid({ exclude }) {
   return (
     <>
       <Title>Related</Title>
       <Grid>
-        {i !== 0 &&
+        {exclude !== 'SYSTEM' &&
           <Item href="/system" color1="#2a9d8f" color2="#186158">
             <img src="/images/system.png" alt="System Image" />
             <h3>System&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} /></h3>
           </Item>
         }
-        {i !== 1 &&
+        {exclude !== 'HOW_IT_WORKS' &&
           <Item href="/how-it-works" color1="#e9c46a" color2="#ba9e58">
             <img src="/images/how-it-works.png" alt="How it Works Image" />
             <h3>How it Works&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} /></h3>
           </Item>
         }
-        {i !== 2 &&
+        {exclude !== 'EVALUATION' &&
           <Item href="/evaluation" color1="#f4a261" color2="#b97a49">
             <img src="/images/evaluation.png" alt="Evaluation Image" />
             <h3>Evaluation&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} /></h3>
           </Item>
         }
-        {i !== 3 &&
+        {exclude !== 'BUDGET' &&
           <Item href="budget" color1="#264653" color2="#15262d">
             <img src="/images/budget.png" alt="Budget Image" />
             <h3>Budget&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} /></h3>
           </Item>
         }
-        {i !== 4 &&
+        {exclude !== 'TEAM' &&
           <Item href="team" color1="#e76f51" color2="#9d4b36">
             <img src="/images/team.png" alt="Team Image" />
             <h3>Team&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} /></h3>

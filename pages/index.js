@@ -86,7 +86,7 @@ function Home() {
 
         <Fade>
           <p>Vitruvian detects if you are slouching or sitting for a long period of time and provides real-time feedback as a vibration and a sound, which can be configured in the accompanying Android app. The system intelligently detects between the user quickly bending over and the user slouching for an extended period. Using machine learning, the system can even detect if you are sitting, standing, walking and more!</p>
-          <iframe id="video" src="https://www.youtube.com/embed/xj14pMFJlm0?autoplay=true"></iframe>
+          <iframe className="video" src="https://www.youtube.com/embed/xj14pMFJlm0?autoplay=true"></iframe>
         </Fade>        
 
         <HalfHalf className="app">
@@ -98,7 +98,7 @@ function Home() {
             <p>We want everyone to feel included through design, so we included a feature that allows you to change your character that appears on the main screen to suit you.</p>
             <p>The app supports <b>dark mode</b> to help avoid visual fatigue. All colours are <a href="https://www.w3.org/TR/WCAG21/" target="_blank">WCAG</a> AAA compliant and all designs were built from scratch following <a href="https://material.io/" target="_blank">Material Design</a> best practices.</p>
             <p>We also wanted the app to be colour deficiency and colour blind friendly – meaning all screens have been tested against 4 different types of visual defects, especially data visualisation.</p>
-            <a className="gplay" href='https://play.google.com/store/?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+            <a className="gplay" href='https://play.google.com/store'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
             <Button href="/system">
               Read more
               &nbsp;
@@ -192,16 +192,16 @@ function Home() {
         </Fade>
         <Fade up>
           <HalfHalf>
-            <HalfImage image="user_guide.png" />
             <HalfText>
-              <h2>User Guide</h2>
-              <p>View our User Guide for information on setting up your device, installing the Android application, using your device and troubleshooting advice.</p>
-              <Button href="/user_guide.pdf">
-                Read
+              <h2>Submissions</h2>
+              <p>A collection of all of <b>Team Vee's</b> submissions throughout SDP. Includes our User Guide, Demo reports and Demo videos.</p>
+              <Button href="/submissions">
+                View submissions
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>
             </HalfText>
+            <HalfImage image="user_guide.png" />
           </HalfHalf>
         </Fade>
 
