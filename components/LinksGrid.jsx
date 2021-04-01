@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Title = styled.h3`
   margin-top: 100px;
+  color: var(--primary-label-color);
 `;
 
 const Grid = styled.div`

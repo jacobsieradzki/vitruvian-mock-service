@@ -17,6 +17,7 @@ export const Page = styled.div`
 
   & > h3 {
     font-size: 32px;
+    color: var(--primary-label-color);
   }
 
   p { 

@@ -6,12 +6,13 @@ export const Person = styled.div`
   h3 {
     font-size: 24px;
     margin: 5px 0;
+    color: var(--primary-label-color);
   }
 
   span {
     font-size: 16px;
     font-family: var(--secondary-font);
-    color: var(--secondary-label-color);
+    color: var(--tertiary-label-color);
   }
 
   p {
