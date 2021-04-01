@@ -58,7 +58,7 @@ function Home() {
                 </Poster>
                 <Content.Window>
                   <Content.Top>
-                    <h1>Bad posture? Let's fix it.</h1>
+                    <h1>Bad posture?<br/>Let's fix it.</h1>
                     <Fade>
                       <p>Introducing Vitruvian, a compact and lightweight device that attaches unobtrusively to your body with a light and comfortable vest. </p>
                       <p>Our project aims to help improve people’s posture and health while working from home.</p>
@@ -94,10 +94,10 @@ function Home() {
             <h2>Straight to your phone!</h2>
             <p>Vitruvian pairs with your Android phone via Bluetooth and syncs all of your activity data throughout the day.</p>
             <p>View real-time posture scores as well as historical insights to track your progress. The app intelligently keeps all data for the current month and shows you averages for previous months since you started, to save vital space on your phone.</p>
-            <p>We realise that sometimes you don’t want your device to be playing a sound at work, or the vibrations may get annoying all day – which is why we included a feature to configure alerts to suit you from the app. </p>
+            <p>We realise that sometimes you don’t want your device to be playing a sound at work, or the vibrations may get annoying all day – which is why we included a feature to configure alerts from the app. </p>
             <p>We want everyone to feel included through design, so we included a feature that allows you to change your character that appears on the main screen to suit you.</p>
             <p>The app supports <b>dark mode</b> to help avoid visual fatigue. All colours are <a href="https://www.w3.org/TR/WCAG21/" target="_blank">WCAG</a> AAA compliant and all designs were built from scratch following <a href="https://material.io/" target="_blank">Material Design</a> best practices.</p>
-            <p>We also wanted the app to be colour deficiency and colour blind friendly – meaning all screens have been tested against 4 different types of visual defects, especially data visualisation.</p>
+            <p>We also wanted the app to be colour deficiency and colour-blindness friendly – meaning all screens have been tested against 4 different types of color blindness, especially data visualisation.</p>
             <a className="gplay" href='https://play.google.com/store'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
           </HalfText>
             <HalfImage className="app-image">
@@ -117,7 +117,7 @@ function Home() {
             <HalfText>
               <h2>System</h2>
               <p>Our system is powered by a <b>Raspberry Pi Zero</b> and two <b>MPU-9250</b>s, which connects to the accompanying Android app via Bluetooth.</p>
-              <p>The low-power components give the system enough battery to make it all the way through the work day!</p>
+              <p>The low-power components give the system enough battery life to make it all the way through the work day!</p>
               <Button href="/system">
                 Read more
                 &nbsp;

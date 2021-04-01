@@ -80,7 +80,7 @@ function Home() {
             <td>£6.40</td>
           </tr>
           <tr>
-            <td><a href="https://packlane.com/products/product-boxes">Packaging</a></td>
+            <td>Packaging</td>
             <td>~ £1.03</td>
           </tr>
           <tr>

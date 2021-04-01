@@ -17,7 +17,7 @@ function Home() {
         <h1>System</h1>
         <span>Last Updated 1 April, 2021</span>
 
-        <p>Measurements are handled by a pair of sensors placed on your upper and lower back. Processing is handled by a raspberry pi placed inside the main casing, which can connect to your phone. The low-power components give the system enough battery to make it all the way through the workday!</p>
+        <p>Measurements are handled by a pair of sensors placed on your upper and lower back. Processing is handled by a raspberry pi placed inside the main casing, which can connect to your phone. The low-power components give the system enough battery life to make it all the way through the workday!</p>
         <p>We have a system of sensors and feedback devices all hooked up to our lightweight Raspberry Pi Zero for processing. The majority of this is contained within our snazzy casing, with only a few sensors needing integration into our vest for improved accuracy.</p>
         <p>All together our system is lightweight and powerful, capable of analysing your posture and activity and providing ample, customisable feedback.</p>
 

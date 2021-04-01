@@ -26,7 +26,7 @@ function Home() {
         <p>Slouch forwards naturally, press the button again and hold for 4 seconds until you hear the alert. </p>
         <p>Once the device is connected, you can customize the slouch and sedentary alerts you just heard and then we can start fixing your posture!</p>
         <p>The app lets you view real-time posture scores. In the device settings, you can disable tracking when you want a break, re-calibrate the device if there are issues, configure alerts to suit you and even change your character.</p>
-        <p>From the main screen you can also view Common posture mistakes and fixes advice from the NHS.</p>
+        <p>From the main screen you can also view common posture mistakes and fixes advice from the NHS.</p>
         <p>Finally, you can see detail posture scores and activity tracking for the current month, and average scores and tracking for previous months.</p>
 
 
