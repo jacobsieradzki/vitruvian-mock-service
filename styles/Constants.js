@@ -11,6 +11,7 @@ export const Colors = `
   --background-color: rgb(255, 255, 255);
   --secondary-background-color: rgb(240, 242, 247);
   --tertiary-background-color: rgb(255, 255, 255);
+  --background-blur-color: rgba(255, 255, 255, 0.72);
 
   --primary-label-color: rgb(0, 0, 0);
   --secondary-label-color: rgba(60, 60, 67, 0.60);
@@ -28,6 +29,7 @@ export const DarkModeColors = `
   --background-color: rgb(28, 28, 30);
   --secondary-background-color: rgb(44, 44, 46);
   --tertiary-background-color: rgb(58, 58, 60);
+  --background-blur-color: rgba(0, 0, 0 ,0.72);
 
   --primary-label-color: rgb(255, 255, 255);
   --secondary-label-color: rgba(235, 235, 245, 0.30);

@@ -4,13 +4,16 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   height: 80px;
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 20px;
-  background-color: var(--background-color);
   border-bottom: 1px var(--separator-color) solid;
   z-index: 1000;
+
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: var(--background-blur-color);
 
   @media (max-width: 1024px) {
     width: calc(100% - 40px);

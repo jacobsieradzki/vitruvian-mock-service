@@ -99,11 +99,6 @@ function Home() {
             <p>The app supports <b>dark mode</b> to help avoid visual fatigue. All colours are <a href="https://www.w3.org/TR/WCAG21/" target="_blank">WCAG</a> AAA compliant and all designs were built from scratch following <a href="https://material.io/" target="_blank">Material Design</a> best practices.</p>
             <p>We also wanted the app to be colour deficiency and colour blind friendly – meaning all screens have been tested against 4 different types of visual defects, especially data visualisation.</p>
             <a className="gplay" href='https://play.google.com/store'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
-            <Button href="/system">
-              Read more
-              &nbsp;
-              <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
           </HalfText>
             <HalfImage className="app-image">
               <lottie-player
@@ -196,7 +191,7 @@ function Home() {
               <h2>Submissions</h2>
               <p>A collection of all of <b>Team Vee's</b> submissions throughout SDP. Includes our User Guide, Demo reports and Demo videos.</p>
               <Button href="/submissions">
-                View submissions
+                View all
                 &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} />
               </Button>

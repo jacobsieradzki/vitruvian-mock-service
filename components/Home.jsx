@@ -25,6 +25,12 @@ export const Poster = styled.div`
   @media (max-width: 1024px) {
     width: calc(100% - 80px);
     height: 80vh;
+
+  }
+
+  @media (max-width: 768px) {
+    height: 50vh;
+    background-position: calc(50% + 15px) calc(50% + 30px)
   }
 `;
 
@@ -50,6 +56,8 @@ const Window = styled.div`
     width: 80%;
     margin: 10px auto;
     padding: 0;
+
+    h1 { font-size: 50px; }
   }
 `;
 
