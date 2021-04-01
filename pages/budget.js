@@ -16,6 +16,18 @@ function Home() {
       <Page>
         <h1>Budget</h1>
         <p>This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... This is some text ... </p>
+
+        <table>
+          <th>
+            <td>Item</td>
+            <td>Cost</td>
+          </th>
+          <tr>
+            <td>Vitruvian</td>
+            <td>£10</td>
+          </tr>
+        </table>
+
         <LinksGrid exclude="BUDGET" />
 
         <DiscussionEmbed 

@@ -17,6 +17,7 @@ export const Poster = styled.div`
 
   .logo {
     height: 100px;
+    width: 100%;
   }
 
   background: var(--v-dark-purple) url("images/${props => props.image}") center center no-repeat;
@@ -25,7 +26,6 @@ export const Poster = styled.div`
   @media (max-width: 1024px) {
     width: calc(100% - 80px);
     height: 80vh;
-
   }
 
   @media (max-width: 768px) {

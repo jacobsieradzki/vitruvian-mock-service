@@ -29,7 +29,11 @@ function Home() {
               Download
             </Button>
           </HalfText>
-        </HalfHalf>        
+        </HalfHalf>
+
+        <h2>Industry Day</h2>
+
+        <iframe className="video" src="https://www.youtube.com/embed/mGL_-anc8L8"></iframe>
 
         <HalfHalf style={{ marginTop: 100 }}>
           <HalfText>
@@ -43,7 +47,7 @@ function Home() {
           <HalfImage image="demo_report_4_thumb.png" style={{ backgroundSize: 'auto 100%' }} />
         </HalfHalf>
 
-        <iframe className="video" src="https://www.youtube.com/embed/xj14pMFJlm0?autoplay=true"></iframe>
+        <iframe className="video" src="https://www.youtube.com/embed/xj14pMFJlm0"></iframe>
 
         <HalfHalf style={{ marginTop: 100 }}>
           <HalfText>
@@ -57,7 +61,7 @@ function Home() {
           <HalfImage image="demo_report_3_thumb.png" style={{ backgroundSize: 'auto 100%' }} />
         </HalfHalf>
 
-        <iframe className="video" src="https://www.youtube.com/embed/7OK2zYLr5NM?autoplay=true"></iframe>
+        <iframe className="video" src="https://www.youtube.com/embed/7OK2zYLr5NM"></iframe>
 
         <HalfHalf style={{ marginTop: 100 }}>
           <HalfText>
@@ -71,7 +75,7 @@ function Home() {
           <HalfImage image="demo_report_2_thumb.png" style={{ backgroundSize: 'auto 100%' }} />
         </HalfHalf>
 
-        <iframe className="video" src="https://www.youtube.com/embed/eSUEcyXjCkI?autoplay=true"></iframe>
+        <iframe className="video" src="https://www.youtube.com/embed/eSUEcyXjCkI"></iframe>
 
         <HalfHalf style={{ marginTop: 100 }}>
           <HalfText>
@@ -85,7 +89,7 @@ function Home() {
           <HalfImage image="demo_report_1_thumb.png" style={{ backgroundSize: 'auto 100%' }} />
         </HalfHalf>
 
-        <iframe className="video" src="https://www.youtube.com/embed/aawJXvcAQLU?autoplay=true"></iframe>
+        <iframe className="video" src="https://www.youtube.com/embed/aawJXvcAQLU"></iframe>
 
         <HalfHalf style={{ marginTop: 100 }}>
           <HalfText>
