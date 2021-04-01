@@ -50,7 +50,8 @@ function Home() {
           role="Team Leader"
           description="Created UI designs, built web-server communication for Pi and Android, built website, created Demo Video 4."
           image="jake"
-          linkedin=""
+          linkedin="https://www.linkedin.com/in/jacobsieradzki/"
+          github="http://github.com/jacobsieradzki"
         />
 
         <PersonItem

@@ -60,8 +60,8 @@ function Home() {
                   <Content.Top>
                     <h1>Bad posture?<br/>Let's fix it.</h1>
                     <Fade>
-                      <p>Introducing Vitruvian, a compact and lightweight device that attaches unobtrusively to your body with a light and comfortable vest. </p>
                       <p>Our project aims to help improve people’s posture and health while working from home.</p>
+                      <p>Introducing Vitruvian, a compact and lightweight device that attaches unobtrusively to your body with a light and comfortable vest.</p>
                     </Fade>
                   </Content.Top>
                   <Content.Spacer />

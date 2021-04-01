@@ -34,6 +34,8 @@ export default class CustomDocument extends Document {
       <Html lang='en'>
         <Head>
           <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+          <title>Vitruvian | Team Vee | SDP 2021</title>
+          <description>Our project aims to help improve people’s posture and health while working from home.</description>
 
           {/* Google fonts: prefetch/preconnect */}
           <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
