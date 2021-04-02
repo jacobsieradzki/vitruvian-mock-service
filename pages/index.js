@@ -83,7 +83,6 @@ function Home() {
       </Controller>
 
       <Page id="home">
-
         <Fade>
           <p>Vitruvian detects if you are slouching or sitting for a long period of time and provides real-time feedback as a vibration and a sound, which can be configured in the accompanying Android app. The system intelligently detects between the user quickly bending over and the user slouching for an extended period. Using machine learning, the system can even detect if you are sitting, standing, walking and more!</p>
           <iframe className="video" src="https://www.youtube.com/embed/mGL_-anc8L8"></iframe>
