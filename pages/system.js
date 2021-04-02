@@ -27,6 +27,9 @@ function Home() {
         <p>Vitruvian compares angle and curve to a set of normal values that you, the user, can calibrate in order to determine if you’re slouching. It passes movement information though a sophisticated machine learning model in order to classify active or sedentary activities. Vitruvian runs an internal timer in order to calculate how long you’ve been slouching or sitting for.</p>
         <p>Vitruvian handles on-board tracking of posture data. When you connect it to your phone, sends this data over allowing you to see your improvements over time!</p>
         <p>Using Machine Learning, Vitruvian can detect your activity behavior like sitting, standing, walking and laying etc. And then uses this information to notify about a sedentary behavior if it lasts for more than an hour.</p>
+
+        <img src="/images/garry.png" alt="Garry wearing a product" />
+
         <LinksGrid exclude="SYSTEM" />
 
         <DiscussionEmbed 
